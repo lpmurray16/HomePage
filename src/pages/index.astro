@@ -1,0 +1,46 @@
+---
+// Layout Import
+import MyMainLayout from '../layouts/MyMainLayout.astro';
+// You can import components from any supported Framework here!
+import Clock from 'react-live-clock';
+let title = 'My Homepage';
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+
+
+import axios from "axios";
+
+const weatherNow = "https://api.m3o.com/v1/weather/Now";
+const weatherForecast = "https://api.m3o.com/v1/weather/Forecast";
+const API_TOKEN = "ZmJlNWFhYjEtNGQ0NC00YjhjLWI0MmMtNTI4MzRiNmZkOGFk";
+
+axios
+    .get(weatherNow, {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + API_TOKEN,
+        },
+        params: {
+            location: "60174",
+        },
+    })
+    .then(function (response) {
+        console.log(response.data.data);
+    });
+---
+
+
+<MyMainLayout title={title}>
+    <h1 class="force-center topbottom-1 fancy-text">Hello There!</h1>
+	<Clock className="reverse-fancy-text force-center very-large-text" format={"h:mm:ss A"} ticking={true} timezone={"US/Central"} />
+    <div class="weather-container">
+		<h2 id="location">Location</h2>
+		<p id="temp-now">Temp Now</p>
+		<p id="temp-later">Temp Later</p>
+	</div>
+	
+
+	<script hoist type="module">
+    	import '../scripts/main.js';
+	</script>
+</MyMainLayout>

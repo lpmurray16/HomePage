@@ -1,0 +1,70 @@
+:root {
+    --orange: #e6750c;
+    --peach: #f57048;
+    --purple: #913a94;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Sora", sans-serif;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+a {
+    text-decoration: none;
+    color: var(--purple);
+    transition: color 0.3s ease-in-out;
+}
+a:hover {
+    color: var(--peach);
+}
+body {
+    height: 100vh;
+    width: 100vw;
+}
+.full-width {
+    width: 100%;
+}
+.force-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.topbottom-1 {
+    padding: 1em 0;
+}
+.fancy-text {
+    text-shadow: 0.07em 0.07em 0px #1a1a1a, 0.1em 0.1em 0px var(--orange),
+        0.15em 0.15em 0 var(--purple);
+    letter-spacing: 0.5vw;
+    text-transform: uppercase;
+}
+.reverse-fancy-text {
+    text-shadow: 0.07em 0.07em 0px #1a1a1a, 0.1em 0.1em 0px var(--purple),
+        0.15em 0.15em 0 var(--orange);
+    letter-spacing: 0.5vw;
+    text-transform: uppercase;
+}
+.very-large-text {
+    font-size: 5rem;
+    font-weight: 700;
+}
+.weather-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    padding: 1em;
+    background: #333333;
+    margin: 2em auto;
+    border-radius: 5px;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #fffffe;
+    }
+}
