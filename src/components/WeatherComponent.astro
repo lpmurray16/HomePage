@@ -4,25 +4,50 @@ import axios from "axios";
 const weatherNow = "https://api.m3o.com/v1/weather/Now";
 const weatherForecast = "https://api.m3o.com/v1/weather/Forecast";
 const API_TOKEN = "ZmJlNWFhYjEtNGQ0NC00YjhjLWI0MmMtNTI4MzRiNmZkOGFk";
+
+const laterIcon, nowIcon, tempNow, tempLater, locationInject;
+
 axios
-    .get(weatherNow, {
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + API_TOKEN,
-        },
-        params: {
-            location: "Saint Charles, IL",
-        },
-    })
-    .then(function (response) {
-        console.log(response.data.data);
-    });
+	.get(weatherNow, {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: "Bearer " + API_TOKEN
+		},
+		params: {
+			location: "Saint Charles, IL"
+		}
+	})
+	.then(function (response) {
+		locationInject = response.data.location + ", " + response.data.region;
+		tempNow = response.data.condition + " " + response.data.temp_f + "° F";
+		nowIcon = response.data.icon_url;
+	});
+axios
+	.get(weatherForecast, {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: "Bearer " + API_TOKEN
+		},
+		params: {
+			location: "Saint Charles, IL"
+		}
+	})
+	.then(function (response) {
+		laterIcon = response.data.forecast[0].icon_url;
+		tempLater = response.data.forecast[0].condition + " Max: " + response.data.forecast[0].max_temp_f + "° F");
+	});
 ---
 
 <div class="weather-container">
-    <h2 id="location">Location</h2>
-    <p id="temp-now">Temp Now</p>
-    <p id="temp-later">Temp Later</p>
+    <h2 id="location">{locationInject}</h2>
+    <p id="temp-now">
+        <img src="{nowIcon}" />
+        {tempNow}
+    </p>
+    <p id="temp-later">
+        <img src="{laterIcon}" />
+        {tempLater}
+    </p>
 </div>
 
 
