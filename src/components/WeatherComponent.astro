@@ -1,57 +1,18 @@
 ---
-import axios from "axios";
-
-const weatherNow = "https://api.m3o.com/v1/weather/Now";
-const weatherForecast = "https://api.m3o.com/v1/weather/Forecast";
-const API_TOKEN = "ZmJlNWFhYjEtNGQ0NC00YjhjLWI0MmMtNTI4MzRiNmZkOGFk";
-let locationInject = "Location";
-let tempNow = "tempNow";
-let tempLater = "tempLater";
-let nowIcon = "default";
-let laterIcon = "default";
-axios
-	.get(weatherNow, {
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: "Bearer " + API_TOKEN
-		},
-		params: {
-			location: "Saint Charles, IL"
-		}
-	})
-	.then(function (response) {
-        console.log(response.data);
-		locationInject = response.data.location + ", " + response.data.region;
-		tempNow = response.data.condition + " " + response.data.temp_f + "° F";
-		nowIcon = response.data.icon_url;
-	});
-axios
-	.get(weatherForecast, {
-		headers: {
-			"Content-Type": "application/json",
-			Authorization: "Bearer " + API_TOKEN
-		},
-		params: {
-			location: "Saint Charles, IL"
-		}
-	})
-	.then(function (response) {
-        console.log(response.data);
-		laterIcon = response.data.forecast[0].icon_url;
-		tempLater = response.data.forecast[0].condition + " Max: " + response.data.forecast[0].max_temp_f + "° F";
-	});
+// nothing to import here, yet.
 ---
 
 <div class="weather-container">
-    <h2 id="location">{locationInject}</h2>
-    <p id="temp-now">
-        <img src={nowIcon} />
-        {tempNow}
+    <h2 id="location">Location</h2>
+    <img id="now-icon" src="" alt="Current Weather Icon"/>
+	<p id="temp-now">
+        Temp Now
     </p>
+	<img id="later-icon" src="" alt="Forecasted Weather Icon"/>
     <p id="temp-later">
-        <img src={laterIcon} />
-        {tempLater}
+        Temp later
     </p>
 </div>
+<script src={Astro.resolve("../scripts/main.js")}></script>
 
 
