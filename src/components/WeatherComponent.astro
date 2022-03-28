@@ -4,9 +4,11 @@ import axios from "axios";
 const weatherNow = "https://api.m3o.com/v1/weather/Now";
 const weatherForecast = "https://api.m3o.com/v1/weather/Forecast";
 const API_TOKEN = "ZmJlNWFhYjEtNGQ0NC00YjhjLWI0MmMtNTI4MzRiNmZkOGFk";
-
-const laterIcon, nowIcon, tempNow, tempLater, locationInject;
-
+let locationInject = "Location";
+let tempNow = "tempNow";
+let tempLater = "tempLater";
+let nowIcon = "default";
+let laterIcon = "default";
 axios
 	.get(weatherNow, {
 		headers: {
@@ -18,6 +20,7 @@ axios
 		}
 	})
 	.then(function (response) {
+        console.log(response.data);
 		locationInject = response.data.location + ", " + response.data.region;
 		tempNow = response.data.condition + " " + response.data.temp_f + "° F";
 		nowIcon = response.data.icon_url;
@@ -33,19 +36,20 @@ axios
 		}
 	})
 	.then(function (response) {
+        console.log(response.data);
 		laterIcon = response.data.forecast[0].icon_url;
-		tempLater = response.data.forecast[0].condition + " Max: " + response.data.forecast[0].max_temp_f + "° F");
+		tempLater = response.data.forecast[0].condition + " Max: " + response.data.forecast[0].max_temp_f + "° F";
 	});
 ---
 
 <div class="weather-container">
     <h2 id="location">{locationInject}</h2>
     <p id="temp-now">
-        <img src="{nowIcon}" />
+        <img src={nowIcon} />
         {tempNow}
     </p>
     <p id="temp-later">
-        <img src="{laterIcon}" />
+        <img src={laterIcon} />
         {tempLater}
     </p>
 </div>
