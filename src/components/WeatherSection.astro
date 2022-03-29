@@ -1,0 +1,35 @@
+---
+const response = await fetch("https://graphql-weather-api.herokuapp.com", 
+  {
+    method:'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      query: `
+        query getWeather($name:String!) {
+            getCityByName(name: $name, config: { units: imperial, lang: en }){
+              name
+              country
+              weather {
+                temperature {
+                    actual
+                    feelsLike
+                }
+                summary {
+                    description
+                }
+              }
+            }
+          }
+        `,
+      variables: {
+          name: 'Chicago',
+      },
+    }),
+  })
+
+const json = await response.json();
+const weather = json.data
+---
+  <h1>Fetching Weather at build time</h2>
+  <h2>{weather.getCityByName.name}, {weather.getCityByName.country}</h3>
+  <p>Weather: {weather.getCityByName.weather.summary.description} Temp: {weather.getCityByName.weather.temperature.actual}</p>
