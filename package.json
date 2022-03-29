@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
-    "react-live-clock": "^5.7.0"
+    "themed-digital-clock": "^1.2.1"
   }
 }

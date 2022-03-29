@@ -3,7 +3,7 @@
 import MyMainLayout from '../layouts/MyMainLayout.astro';
 
 // You can import components from any supported Framework here!
-import Clock from 'react-live-clock';
+import DigitalClock from '../components/DigitalClock.jsx';
 import WeatherComponent from '../components/WeatherComponent.jsx';
 
 let title = 'My Homepage';
@@ -12,6 +12,6 @@ let title = 'My Homepage';
 
 <MyMainLayout title={title}>
     <h1 class="force-center topbottom-1 fancy-text">Hello, Logan!</h1>
-	<Clock className="reverse-fancy-text force-center very-large-text" format={"h:mm:ss A"} ticking={true} timezone={"US/Central"} client:load/>
+	<DigitalClock client:load/>
     <WeatherComponent client:load/>
 </MyMainLayout>
