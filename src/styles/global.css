@@ -10,7 +10,7 @@
     font-family: "Sora", sans-serif;
 }
 h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 5vw, 5rem);
     font-weight: 700;
 }
 a {
@@ -50,17 +50,57 @@ body {
     text-transform: uppercase;
 }
 .very-large-text {
-    font-size: 5rem;
+    font-size: clamp(2em, 9.5vw, 5em);
     font-weight: 700;
 }
 .weather-container {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     width: 80%;
     padding: 1em;
     background: #333333;
     margin: 2em auto;
     border-radius: 5px;
+}
+.weather-container > * {
+    width: 270px;
+    margin: 4px;
+}
+.later-container,
+.now-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #444;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+.later-container:hover {
+    cursor: pointer;
+}
+.now-container:hover {
+    cursor: pointer;
+}
+
+#location {
+    display: grid;
+    place-items: center;
+    font-style: italic;
+}
+#location:before {
+    content: "WEATHER";
+    display: inline-flex;
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #fff;
+    text-shadow: 0.1em 0.1em 0px #333333, 0.13em 0.13em 0px var(--orange),
+        0.15em 0.15em 0 var(--purple);
+}
+img {
+    max-width: 100%;
 }
 @media (prefers-color-scheme: dark) {
     body {
