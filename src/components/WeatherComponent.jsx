@@ -23,7 +23,7 @@ const WeatherComponent = () => {
             },
         })
         .then(function (response) {
-            console.log(response.data);
+            // console.log(response.data);
             setLocation(response.data.location + ", " + response.data.region);
             setNowTemp(
                 response.data.condition + " " + response.data.temp_f + "° F"
@@ -41,7 +41,7 @@ const WeatherComponent = () => {
             },
         })
         .then(function (response) {
-            console.log(response.data);
+            // console.log(response.data);
             setLaterIcon(response.data.forecast[0].icon_url);
             setLaterTemp(
                 response.data.forecast[0].condition +

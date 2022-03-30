@@ -12,11 +12,12 @@ export default function DigitalClock() {
         const timer = setInterval(() => {
             const date = new Date();
             setDateTime({
-                hours: date.getHours(),
+                hours: (date.getHours() % 12).toString().padStart(2, "0"),
                 minutes: date.getMinutes(),
                 seconds: date.getSeconds(),
             });
         }, 1000);
+        const morningNight = dateTime.hours < 12 ? "AM" : "PM";
         return () => clearInterval(timer);
     }, []);
 
