@@ -6,6 +6,7 @@ import MyMainLayout from '../layouts/MyMainLayout.astro';
 import DigitalClock from '../components/DigitalClock.jsx';
 import WeatherComponent from '../components/WeatherComponent.jsx';
 import WeatherSection from '../components/WeatherSection.astro';
+import CodeLinksMenu from '../components/CodeLinksMenu.astro';
 let title = 'My Homepage';
 ---
 
@@ -15,4 +16,5 @@ let title = 'My Homepage';
 	<DigitalClock client:load/>
     <WeatherComponent client:load/>
     <WeatherSection />
+    <CodeLinksMenu />
 </MyMainLayout>

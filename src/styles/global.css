@@ -102,6 +102,80 @@ body {
 img {
     max-width: 100%;
 }
+/* dropdown */
+.menu {
+    float: left;
+    padding: 10px;
+    font-weight: normal;
+    cursor: pointer;
+}
+a.moremenu:link {
+    font: inherit;
+    text-align: center;
+    text-decoration: none;
+    padding: 3px 7px;
+    color: #1c3e8c;
+    border: solid 1px #555;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+a.moremenu:visited {
+    font: inherit;
+    text-align: center;
+    text-decoration: none;
+    padding: 3px 7px;
+    color: #1c3e8c;
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+a.moremenu:hover {
+    text-decoration: none;
+    color: #5a7a9b;
+    border: solid 1px #666;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+#ul_Rep {
+    position: relative;
+    left: 0;
+    top: 5px;
+    margin: 0;
+    padding: 0;
+}
+#ul_Rep li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    font: inherit;
+}
+#ul_Rep div {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border: solid 1px #de9292;
+}
+#ul_Rep div a {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    white-space: nowrap;
+    text-align: left;
+    text-decoration: none;
+    background: #c43434;
+    color: #fff;
+    font: inherit;
+}
+#ul_Rep div a:hover {
+    background: #de9292;
+    color: #fff;
+}
+/* end */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #1a1a1a;
