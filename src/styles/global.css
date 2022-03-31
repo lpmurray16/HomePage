@@ -46,8 +46,10 @@ body {
 .reverse-fancy-text {
     text-shadow: 0.07em 0.07em 0px #1a1a1a, 0.1em 0.1em 0px var(--purple),
         0.15em 0.15em 0 var(--orange);
-    letter-spacing: 0.5vw;
     text-transform: uppercase;
+}
+.space-letters {
+    letter-spacing: 0.5vw;
 }
 .very-large-text {
     font-size: clamp(2em, 9.5vw, 5em);
@@ -103,6 +105,14 @@ img {
     max-width: 100%;
 }
 /* dropdown */
+.all_menu_containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+}
 .menu_container {
 	display: flex;
 	justify-content: center;
