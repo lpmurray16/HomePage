@@ -19,5 +19,7 @@ let title = 'My Homepage';
     <WeatherComponent client:load/>
     <WeatherSection />
     <CodeLinksMenu client:load/>
-    <HoverMenu linksArray={codeArray.allLinksArray} headerTitle={codeArray.headerTitle} client:load/>
+    <div class="force-center">
+        <HoverMenu linksArray={codeArray.allLinksArray} headerTitle={codeArray.headerTitle} client:load/>
+    </div>
 </MyMainLayout>

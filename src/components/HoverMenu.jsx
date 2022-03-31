@@ -15,34 +15,31 @@ const HoverMenu = (props) => {
     // renderedItems is an array of
     const renderedItems = props.linksArray.map((item, index) => {
         return (
-            <a href={item.link} title={item.title} key={index}>
-                {item.title}
-            </a>
+            <li className="submenu_item" key={index}>
+                <a href={item.link} title={item.title} key={index}>
+                    {item.title}
+                </a>
+            </li>
         );
     });
 
     return (
-        <div className="menu">
-            <a
-                className="moremenu"
-                onMouseOver={handleMouseEnter}
-                onMouseOut={handleMouseLeave}
-                href="#"
+        <div className="menu_container">
+            <p
+                className="menu_title reverse-fancy-text"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
             >
                 {props.headerTitle}
-            </a>
-            <ul id="ul_Rep">
-                <li>
-                    <div
-                        id="divLiCat"
-                        onMouseOver={handleMouseEnter}
-                        onMouseOut={handleMouseLeave}
-                        style={{ display: isHover ? "block" : "none" }}
-                    >
-                        {renderedItems}
-                    </div>
-                </li>
-            </ul>
+            </p>
+            <div
+                className="submenu"
+                style={{ display: isHover ? "block" : "none" }}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                <ul className="submenu_list">{renderedItems}</ul>
+            </div>
         </div>
     );
 };
