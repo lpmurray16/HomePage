@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const WeatherComponent = () => {
@@ -12,50 +12,54 @@ const WeatherComponent = () => {
     const [laterIcon, setLaterIcon] = useState("");
     const [laterTemp, setLaterTemp] = useState("");
 
-    axios
-        .get(weatherNow, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer " + API_TOKEN,
-            },
-            params: {
-                location: "Saint Charles, IL",
-            },
-        })
-        .then(function (response) {
-            // console.log(response.data);
-            setLocation(response.data.location + ", " + response.data.region);
-            setNowTemp(
-                response.data.condition + " " + response.data.temp_f + "° F"
-            );
-            setNowIcon(response.data.icon_url);
-        })
-        .catch(function () {
-            console.log("error");
-        });
-    axios
-        .get(weatherForecast, {
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer " + API_TOKEN,
-            },
-            params: {
-                location: "Saint Charles, IL",
-            },
-        })
-        .then(function (response) {
-            // console.log(response.data);
-            setLaterIcon(response.data.forecast[0].icon_url);
-            setLaterTemp(
-                response.data.forecast[0].condition +
-                    " Max: " +
-                    response.data.forecast[0].max_temp_f +
-                    "° F"
-            );
-        })
-        .catch(function () {
-            console.log("error");
-        });
+    useEffect(() => {
+        axios
+            .get(weatherNow, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + API_TOKEN,
+                },
+                params: {
+                    location: "Saint Charles, IL",
+                },
+            })
+            .then(function (response) {
+                // console.log(response.data);
+                setLocation(
+                    response.data.location + ", " + response.data.region
+                );
+                setNowTemp(
+                    response.data.condition + " " + response.data.temp_f + "° F"
+                );
+                setNowIcon(response.data.icon_url);
+            })
+            .catch(function () {
+                console.log("error");
+            });
+        axios
+            .get(weatherForecast, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + API_TOKEN,
+                },
+                params: {
+                    location: "Saint Charles, IL",
+                },
+            })
+            .then(function (response) {
+                // console.log(response.data);
+                setLaterIcon(response.data.forecast[0].icon_url);
+                setLaterTemp(
+                    response.data.forecast[0].condition +
+                        " Max: " +
+                        response.data.forecast[0].max_temp_f +
+                        "° F"
+                );
+            })
+            .catch(function () {
+                console.log("error");
+            });
+    }, []);
 
     return (
         <div className="weather-container">
