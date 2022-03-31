@@ -8,6 +8,7 @@ import WeatherComponent from '../components/WeatherComponent.jsx';
 import WeatherSection from '../components/WeatherSection.astro';
 import HoverMenu from '../components/HoverMenu.jsx';
 import codeArray from '../components/codeLinks.js';
+import jsArray from '../components/javascriptLinks.js';
 let title = 'My Homepage';
 ---
 
@@ -20,5 +21,6 @@ let title = 'My Homepage';
     
     <div class="force-center all_menu_containers">
         <HoverMenu linksArray={codeArray.allLinksArray} headerTitle={codeArray.headerTitle} client:load/>
+        <HoverMenu linksArray={jsArray.allLinksArray} headerTitle={jsArray.headerTitle} client:load/>
     </div>
 </MyMainLayout>
