@@ -9,7 +9,9 @@ const HoverMenu = (props) => {
     };
 
     const handleMouseLeave = () => {
-        setIsHover(false);
+        setTimeout(() => {
+            setIsHover(false);
+        }, 100);
     };
 
     // renderedItems is an array of

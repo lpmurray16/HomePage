@@ -22,7 +22,7 @@ const response = await fetch("https://graphql-weather-api.herokuapp.com",
           }
         `,
       variables: {
-          name: 'Orlando',
+          name: 'Chicago',
       },
     }),
   })
@@ -30,8 +30,11 @@ const response = await fetch("https://graphql-weather-api.herokuapp.com",
 const json = await response.json();
 const weather = json.data
 ---
-  <h3 class="force-center">Weatcher Astro Comp</h3>
-  <h2 class="force-center reverse-fancy-text">{weather.getCityByName.name}, {weather.getCityByName.country}</h2>
-  <br>
-  <p class="force-center">Weather Now "{weather.getCityByName.weather.summary.description}" </p>
-  <p class="force-center">Temp Now&nbsp;<strong>{weather.getCityByName.weather.temperature.actual} ℉</strong></p>
+  <div class="weather-section">
+    <h3 class="force-center">Weatcher Astro Comp</h3>
+    <h2 class="force-center reverse-fancy-text">{weather.getCityByName.name}, {weather.getCityByName.country}</h2>
+    <br>
+    <p class="force-center">Weather Now "{weather.getCityByName.weather.summary.description}" </p>
+    <p class="force-center">Temp Now&nbsp;<strong>{weather.getCityByName.weather.temperature.actual} ℉</strong></p>
+  </div>
+  

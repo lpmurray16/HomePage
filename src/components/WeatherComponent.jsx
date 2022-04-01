@@ -12,6 +12,12 @@ const WeatherComponent = () => {
     const [laterIcon, setLaterIcon] = useState("");
     const [laterTemp, setLaterTemp] = useState("");
 
+    const openLink = () => {
+        window.open(
+            "https://weather.com/weather/hourbyhour/l/80fbe414f8555a5a5efc1e10b1e2f7a6274b03a4ebffccaea5385bd4b97e265f",
+            "_blank"
+        );
+    };
     useEffect(() => {
         axios
             .get(weatherNow, {
@@ -64,18 +70,12 @@ const WeatherComponent = () => {
     return (
         <div className="weather-container">
             <h2 id="location">{location}</h2>
-            <div
-                className="now-container"
-                onClick="window.location.href(https://weather.com/weather/hourbyhour/l/80fbe414f8555a5a5efc1e10b1e2f7a6274b03a4ebffccaea5385bd4b97e265f)"
-            >
+            <div className="now-container" onClick={openLink}>
                 <p>NOW</p>
                 <img id="now-icon" src={nowIcon} alt="Current Weather Icon" />
                 <p id="temp-now">{nowTemp}</p>
             </div>
-            <div
-                className="later-container"
-                onClick="window.location.href(https://weather.com/weather/hourbyhour/l/80fbe414f8555a5a5efc1e10b1e2f7a6274b03a4ebffccaea5385bd4b97e265f)"
-            >
+            <div className="later-container" onClick={openLink}>
                 <p>LATER TODAY</p>
                 <img
                     id="later-icon"
