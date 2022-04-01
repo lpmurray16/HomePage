@@ -10,6 +10,7 @@ import HoverMenu from '../components/HoverMenu.jsx';
 import codeArray from '../components/codeLinks.js';
 import jsArray from '../components/javascriptLinks.js';
 import Menu from '../components/Menu.astro';
+import ClockAlt from '../components/ClockAlt.astro';
 let title = 'My Homepage';
 ---
 
@@ -20,6 +21,7 @@ let title = 'My Homepage';
       <WeatherComponent client:load/>
       <div class="col">
         <DigitalClock client:load/>
+        <ClockAlt />
         <WeatherSection />
       </div>
     </div>

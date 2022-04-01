@@ -1,0 +1,18 @@
+---
+// nothing to import here
+---
+
+<div class="digital-clock-alt"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js"></script>
+<script>
+    const digitalClock = document.querySelector(".digital-clock-alt");
+    const tick = () => {
+        const now = new Date();
+        const HMS = dateFns.format(now, "hh : mm : ss A");
+        const DMY = dateFns.format(now, "dddd, MMMM Do, YYYY");
+        const clock = `<span class="time">${HMS}</span><span>${DMY}</span>`;
+            digitalClock.innerHTML = clock;
+    };
+    setInterval(tick, 1000);
+</script>
