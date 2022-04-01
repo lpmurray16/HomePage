@@ -3,13 +3,13 @@
 ---
 
 <script src="//unpkg.com/alpinejs" defer></script>
- 
-<div x-data="{ open: false }">
-	<button x-on:click="open = ! open">
-		Toggle
-	</button>
 
-	<p x-show="open" x-transition>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, accusantium repellendus facere dignissimos praesentium deleniti rerum adipisci dolores ullam harum officiis distinctio vitae voluptatem maiores earum molestias sapiente provident!
-	</p>
+<div x-data="{ open: false }" class="menu-container" @mouseleave="open = false">
+	<button @mouseover="open = true" class="menu_title">Category</button>
+	<div x-show="open" class="submenu" x-transition>
+		<ul class="submenu_list">
+			<li class="submenu_item">Sub-category 1</li>
+			<li class="submenu_item">Sub-category 2</li>
+		</ul>
+	</div>
 </div>
