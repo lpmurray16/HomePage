@@ -17,17 +17,22 @@ let title = 'My Homepage';
 
 <MyMainLayout title={title}>
     <h1 class="force-center topbottom-1 fancy-text">Hello, Logan!</h1>
-    <div class="row">
-      <WeatherComponent client:load/>
-      <div class="col">
-        <DigitalClock client:load/>
-        <ClockAlt />
-        <WeatherSection />
-      </div>
-    </div>
-	<div class="row force-center all_menu_containers">
+    <ClockAlt />
+    <div class="row force-center all_menu_containers">
         <HoverMenu linksArray={codeArray.allLinksArray} headerTitle={codeArray.headerTitle} client:load/>
         <HoverMenu linksArray={jsArray.allLinksArray} headerTitle={jsArray.headerTitle} client:load/>
         <Menu />
+    </div>
+    <div class="row">
+      <div class="col">
+        <WeatherComponent client:load/>
+      </div>
+      
+      <div class="col">
+        <div class="weather-container">
+          
+          <WeatherSection />
+        </div>
+      </div>
     </div>
 </MyMainLayout>

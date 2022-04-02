@@ -4,12 +4,12 @@
 
 <script src="//unpkg.com/alpinejs" defer></script>
 
-<div x-data="{ open: false }" class="menu-container" @mouseleave="open = false">
-	<button @mouseover="open = true" class="menu_title">Category</button>
+<div x-data="{ open: false }" class="menu_container" @mouseover.away="open = false">
+	<p @mouseover="open = true" class="menu_title reverse-fancy-text">Category</p>
 	<div x-show="open" class="submenu" x-transition>
 		<ul class="submenu_list">
-			<li class="submenu_item">Sub-category 1</li>
-			<li class="submenu_item">Sub-category 2</li>
+			<li class="submenu_item"><a href="#">Sub-category 1</a></li>
+			<li class="submenu_item"><a href="#">Sub-category 2</a></li>
 		</ul>
 	</div>
 </div>

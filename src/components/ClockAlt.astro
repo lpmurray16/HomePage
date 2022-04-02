@@ -11,7 +11,8 @@
         const now = new Date();
         const HMS = dateFns.format(now, "hh : mm : ss A");
         const DMY = dateFns.format(now, "dddd, MMMM Do, YYYY");
-        const clock = `<span class="time">${HMS}</span><span>${DMY}</span>`;
+        const clock = `<p class="time reverse-fancy-text force-center">${HMS}</p>
+                       <p class="force-center">${DMY}</p>`;
             digitalClock.innerHTML = clock;
     };
     setInterval(tick, 1000);
