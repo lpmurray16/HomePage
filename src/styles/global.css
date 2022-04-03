@@ -130,12 +130,21 @@ img {
     margin: 0 auto;
 }
 .time {
-    font-size: clamp(1.5em, 5vw, 2.5em);
+    font-size: clamp(2em, 5vw, 2.5em);
     font-weight: 700;
 }
 .bg-gradient {
 	/* background: #ff8906; */
 	background: linear-gradient(155deg,#ff8906 16%,#f25f4c 53%,#e53170 92%);
+}
+.go-to-top {
+    color: #fff;
+    padding: 1em;
+    border-radius: 5px;
+}
+.go-to-top:hover {
+    cursor: pointer;
+    color: var(--orange);
 }
 /* dropdown */
 .all_menu_containers {
