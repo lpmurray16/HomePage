@@ -1,15 +1,16 @@
 ---
-// no imports at the moment
+// Simple Hover Menu built using Alpine JS
+const title = Astro.props.headerTitle;
+const menuItems = Astro.props.arrayOfLinks;
 ---
 
-<script src="//unpkg.com/alpinejs" defer></script>
-
-<div x-data="{ open: false }" class="menu_container" @mouseover.away="open = false">
-	<p @mouseover="open = true" class="menu_title reverse-fancy-text">Category</p>
+<div x-data="{ open: false }" @click.away = "open = false" class="menu_container">
+	<p @click="open = !open" class="menu_title reverse-fancy-text">{title}</p>
 	<div x-show="open" class="submenu" x-transition>
 		<ul class="submenu_list">
-			<li class="submenu_item"><a href="#">Sub-category 1</a></li>
-			<li class="submenu_item"><a href="#">Sub-category 2</a></li>
+		{menuItems.map(({title, link}) => (
+			<li class="submenu_item"><a href={link} target="_blank" rel="noopener noreferrer">{title}</a></li>
+		))}
 		</ul>
 	</div>
 </div>

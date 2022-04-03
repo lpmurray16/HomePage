@@ -12,11 +12,15 @@ let title = Astro.props.title;
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="bg-waves">
     <div id="top"></div>
     <slot />
-    <script>$('a').attr('target', '_blank')</script>
+    <script>
+        $('a').attr('target', '_blank');
+        $('a').attr('rel', 'noopener noreferrer');
+    </script>
 </body>
 <footer>
     <div class="full-width">

@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     font-family: "Sora", sans-serif;
+    scroll-behavior: smooth;
 }
 h1 {
     font-size: clamp(2rem, 5vw, 5rem);
@@ -24,6 +25,13 @@ a:hover {
 body {
     min-height: 100vh;
     width: 100%;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
 }
 .full-width {
     width: 100%;
@@ -44,6 +52,9 @@ body {
 }
 .topbottom-1 {
     padding: 1em 0;
+}
+.top-p-1 {
+    padding-top: 1em;
 }
 .fancy-text {
     text-shadow: 0.07em 0.07em 0px #1a1a1a, 0.1em 0.1em 0px var(--orange),
@@ -174,9 +185,13 @@ img {
 }
 .submenu_item {
     background-color: #555;
+    cursor: pointer;
 }
 .submenu_item:hover {
     background-color: #666;
+}
+.submenu_item:last-of-type {
+    border-radius: 0 0 5px 5px;
 }
 .submenu_item a {
     color: #fff;
@@ -184,15 +199,33 @@ img {
     height: 100%;
     padding: 0.5em;
     display: flex;
+    cursor: pointer;
 }
 .submenu_item a:hover {
-    color: var(--peach);
+    color: var(--orange);
 }
 /* end */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #1a1a1a;
         color: #fffffe;
+    }
+}
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #fffffe;
+        color: #1a1a1a;
+    }
+    .fancy-text {
+        text-shadow: 0.07em 0.07em 0px #fffffe, 0.1em 0.1em 0px var(--orange),
+            0.15em 0.15em 0 var(--purple);
+        letter-spacing: 0.5vw;
+        text-transform: uppercase;
+    }
+    .reverse-fancy-text {
+        text-shadow: 0.07em 0.07em 0px #fffffe, 0.1em 0.1em 0px var(--purple),
+            0.15em 0.15em 0 var(--orange);
+        text-transform: uppercase;
     }
 }
 @media(max-width: 520px) {
