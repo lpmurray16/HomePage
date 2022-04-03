@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const HoverMenu = (props) => {
-    const [isHover, setIsHover] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleMouseEnter = () => {
-        setIsHover(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsHover(false);
+    const handleMouseClick = () => {
+        setIsOpen(!isOpen);
     };
 
     // renderedItems is an array of
@@ -27,16 +22,13 @@ const HoverMenu = (props) => {
         <div className="menu_container">
             <p
                 className="menu_title reverse-fancy-text"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                onClick={handleMouseClick}
             >
                 {props.headerTitle}
             </p>
             <div
                 className="submenu"
-                style={{ display: isHover ? "block" : "none" }}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                style={{ display: isOpen ? "block" : "none" }}
             >
                 <ul className="submenu_list">{renderedItems}</ul>
             </div>
