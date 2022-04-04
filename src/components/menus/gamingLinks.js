@@ -16,16 +16,20 @@ const arrayOfLinks = [
         link: "https://1337x.to/",
     },
     {
-        title: "Placeholder",
-        link: "https://www.login.xfinity.com/",
+        title: "GG Deals",
+        link: "https://gg.deals/us/",
     },
     {
-        title: "Placeholder",
-        link: "https://finwise.upstart.com/funded_borrower_dashboard",
+        title: "ROMs",
+        link: "https://www.romsgames.net/roms/",
     },
     {
-        title: "Placeholder",
-        link: "https://www.wellsfargo.com/",
+        title: "More ROMs",
+        link: "https://vimm.net/?p=vault",
+    },
+    {
+        title: "Browser Games",
+        link: "https://www.retrogames.cc/",
     },
 ];
 

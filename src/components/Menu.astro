@@ -5,7 +5,7 @@ const menuItems = Astro.props.arrayOfLinks;
 ---
 
 <div x-data="{ open: false }" @click.away = "open = false" class="menu_container">
-	<p @click="open = !open" class="menu_title reverse-fancy-text">{title}</p>
+	<p @click="open = !open" class="menu_title reverse-fancy-text bg-gradient">{title}</p>
 	<div x-show="open" class="submenu" x-transition>
 		<ul class="submenu_list">
 		{menuItems.map(({title, link}) => (

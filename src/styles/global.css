@@ -150,7 +150,7 @@ img {
 }
 .go-to-top {
     color: #fff;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 5px;
 }
 .go-to-top:hover {
@@ -179,6 +179,7 @@ img {
 .menu_title {
     padding: 0.5em;
     cursor: pointer;
+    border-radius: 5px;
 }
 .submenu_list {
 	list-style: none;
@@ -213,7 +214,7 @@ img {
 }
 @media (prefers-color-scheme: light) {
     body {
-        background-color: #fffffe;
+        background: #fffffe;
         color: #1a1a1a;
     }
     .fancy-text {
