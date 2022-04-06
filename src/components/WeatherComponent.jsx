@@ -68,7 +68,7 @@ const WeatherComponent = () => {
     }, []);
 
     return (
-        <div className="weather-container">
+        <div className="weather-container bg-gradient">
             <h2 id="location">{location}</h2>
             <div className="now-container" onClick={openLink}>
                 <p>NOW</p>
