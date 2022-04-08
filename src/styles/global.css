@@ -27,7 +27,7 @@ body {
     width: 100%;
 }
 footer {
-    position: fixed;
+    position: static;
     bottom: 0;
     width: 100%;
     letter-spacing: 0.1rem;
@@ -151,6 +151,10 @@ img {
 .bg-gradient {
 	/* background: #ff8906; */
 	background: linear-gradient(155deg,#ff8906 16%,#f25f4c 53%,#e53170 92%);
+    transition: background 0.4s ease-in-out;
+}
+.bg-gradient:hover {
+	background: #e53170;
 }
 .go-to-top {
     color: #fff;
