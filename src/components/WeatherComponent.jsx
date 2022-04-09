@@ -68,21 +68,27 @@ const WeatherComponent = () => {
     }, []);
 
     return (
-        <div className="weather-container bg-gradient">
+        <div className="weather-container">
             <h2 id="location">{location}</h2>
-            <div className="now-container" onClick={openLink}>
-                <p>NOW</p>
-                <img id="now-icon" src={nowIcon} alt="Current Weather Icon" />
-                <p id="temp-now">{nowTemp}</p>
-            </div>
-            <div className="later-container" onClick={openLink}>
-                <p>LATER TODAY</p>
-                <img
-                    id="later-icon"
-                    src={laterIcon}
-                    alt="Forecasted Weather Icon"
-                />
-                <p id="temp-later">{laterTemp}</p>
+            <div className="row">
+                <div className="now-container" onClick={openLink}>
+                    <p className="reverse-fancy-text">NOW</p>
+                    <img
+                        id="now-icon"
+                        src={nowIcon}
+                        alt="Current Weather Icon"
+                    />
+                    <p id="temp-now">{nowTemp}</p>
+                </div>
+                <div className="later-container" onClick={openLink}>
+                    <p className="reverse-fancy-text">LATER TODAY</p>
+                    <img
+                        id="later-icon"
+                        src={laterIcon}
+                        alt="Forecasted Weather Icon"
+                    />
+                    <p id="temp-later">{laterTemp}</p>
+                </div>
             </div>
         </div>
     );

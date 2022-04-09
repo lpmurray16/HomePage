@@ -1,19 +1,24 @@
 ---
 ---
-
+<script src="//unpkg.com/alpinejs" defer></script>
 <div class="todo-wrapper" x-data="{todos: [], userInput = ''}">
     <form x-on:submit.prevent>
         <input type="text" x-model="userInput" placeholder="Enter todo item">
-        <button x-on:click="if(userInput.trim().length)
+        <button @click="if(userInput.trim().length)
         todos.push({name: userInput, completed: false}); userInput=''">Add</button>
     </form>
 
     <template x-for="todo in todos">
         <div>
             <input type="checkbox" x-model="todo.completed">
-            <span x-text="todo.name" :class="{'completed': todo:completed}"></span>
-            
+            <span x-text="todo.name" :class="{'completed': todo.completed}"></span>
+            <button @click="todos = todos.filter((currTodo) => currTodo !== todo)" class="delete-todo">X</button>
         </div>
     </template>
+    <button @click="todos = []" x-show="todos.length">Clear All</button>
 
+    <div>
+        <span x-text="todos.filter((todo) => todo.completed).length"></span>/
+        <span x-text="todos.length"></span> todos completed
+    </div>
 </div>

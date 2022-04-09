@@ -95,11 +95,13 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    max-width: 340px;
+    max-width: 400px;
     padding: 1em;
     background: #333333;
     margin: 2em;
     border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(0, 0, 0, 0.1),
+        0 0 0 0.2em rgba(0, 0, 0, 0.1);
 }
 .weather-container > * {
     width: 100%;
@@ -114,12 +116,11 @@ footer {
     background-color: #444;
     padding: 0.5em;
     border-radius: 5px;
+    margin: 0.5em;
 }
-.later-container:hover {
+.later-container:hover, .now-container:hover {
     cursor: pointer;
-}
-.now-container:hover {
-    cursor: pointer;
+    transform: scale(0.95);
 }
 
 #location {
@@ -145,7 +146,7 @@ img {
     margin: 0 auto;
 }
 .time {
-    font-size: clamp(2em, 5vw, 2.5em);
+    font-size: clamp(3em, 6vw, 3.5em);
     font-weight: 700;
 }
 .bg-gradient {
@@ -153,7 +154,7 @@ img {
 	background: linear-gradient(155deg,#ff8906 16%,#f25f4c 53%,#e53170 92%);
     transition: background 0.4s ease-in-out;
 }
-.bg-gradient:hover {
+.menu_title:hover {
 	background: #e53170;
 }
 .go-to-top {

@@ -4,7 +4,7 @@ import MyMainLayout from '../layouts/MyMainLayout.astro';
 
 // You can import components from any supported Framework here!
 import WeatherComponent from '../components/WeatherComponent.jsx';
-import WeatherSection from '../components/WeatherSection.astro';
+import TodoList from '../components/TodoList.astro';
 import ClockAlt from '../components/ClockAlt.astro';
 import Menu from '../components/Menu.astro';
 // arrays for the menus
@@ -12,6 +12,7 @@ import codeArray from '../components/menus/codeLinks.js';
 import jsArray from '../components/menus/javascriptLinks.js';
 import billsArray from '../components/menus/billsLinks.js';
 import gamesArray from '../components/menus/gamingLinks.js';
+import personalArray from '../components/menus/personalLinks.js'; 
 
 
 let pageTitle = 'My Homepage';
@@ -22,6 +23,7 @@ let pageTitle = 'My Homepage';
     <h1 class="force-center top-p-1 fancy-text">Hello, Logan!</h1>
     <ClockAlt />
     <div class="row force-center all_menu_containers">
+        <Menu arrayOfLinks={personalArray.allLinksArray} headerTitle={personalArray.headerTitle} />
         <Menu arrayOfLinks={gamesArray.allLinksArray} headerTitle={gamesArray.headerTitle} />
         <Menu arrayOfLinks={codeArray.allLinksArray} headerTitle={codeArray.headerTitle} />
         <Menu arrayOfLinks={jsArray.allLinksArray} headerTitle={jsArray.headerTitle} />
@@ -31,11 +33,6 @@ let pageTitle = 'My Homepage';
       <div class="col">
         <WeatherComponent client:idle/>
       </div>
-      
-      <div class="col">
-        <div class="weather-container bg-gradient">
-          <WeatherSection />
-        </div>
-      </div>
     </div>
+  
 </MyMainLayout>
