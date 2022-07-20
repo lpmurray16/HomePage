@@ -3,14 +3,14 @@
 const title = Astro.props.headerTitle;
 const menuItems = Astro.props.arrayOfLinks;
 ---
-<script src="//unpkg.com/alpinejs" defer></script>
-<div x-data="{ open: false }" @click.away = "open = false" class="menu_container">
+
+<div x-data="{ open: false }" @click.away="open = false" class="menu_container">
 	<p @click="open = !open" class="menu_title reverse-fancy-text bg-gradient">{title}</p>
 	<div x-show="open" class="submenu" x-transition>
 		<ul class="submenu_list">
-		{menuItems.map(({title, link}) => (
+			{menuItems.map(({title, link}) => (
 			<li class="submenu_item"><a href={link} target="_blank" rel="noopener noreferrer">{title}</a></li>
-		))}
+			))}
 		</ul>
 	</div>
 </div>

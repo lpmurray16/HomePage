@@ -5,6 +5,7 @@ let title = Astro.props.title;
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +13,9 @@ let title = Astro.props.title;
     <link rel="icon" type="image/x-icon" href="/house.ico" />
     <title>{title}</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
+
 <body class="bg-crosses">
     <div id="top"></div>
     <slot />
@@ -29,4 +31,5 @@ let title = Astro.props.title;
         </div>
     </div>
 </footer>
+
 </html>
