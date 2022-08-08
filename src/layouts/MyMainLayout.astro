@@ -17,19 +17,11 @@ let title = Astro.props.title;
 </head>
 
 <body class="bg-crosses">
-    <div id="top"></div>
     <slot />
     <script>
         $('a').attr('target', '_blank');
         $('a').attr('rel', 'noopener noreferrer');
     </script>
 </body>
-<footer>
-    <div class="full-width">
-        <div class="force-center topbottom-1">
-            <a href="#top" class="go-to-top bg-gradient">TOP</a>
-        </div>
-    </div>
-</footer>
 
 </html>

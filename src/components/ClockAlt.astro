@@ -12,7 +12,7 @@
         const HMS = dateFns.format(now, "hh : mm : ss A");
         const DMY = dateFns.format(now, "dddd, MMMM Do, YYYY");
         const clock = `<p class="time reverse-fancy-text force-center">${HMS}</p>
-                       <p class="force-center">${DMY}</p>`;
+                       <p class="force-center txt-large">${DMY}</p>`;
             digitalClock.innerHTML = clock;
     };
     setInterval(tick, 1000);
